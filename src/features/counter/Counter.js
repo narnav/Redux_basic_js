@@ -6,12 +6,13 @@ import {
   incrementByAmount,
   incrementAsync,
   incrementIfOdd,
-  selectCount,
+  selectCount,selectWaga
 } from './counterSlice';
 import styles from './Counter.module.css';
 
 export function Counter() {
   const count = useSelector(selectCount);
+  const myWaga = useSelector(selectWaga);
   const dispatch = useDispatch();
   const [incrementAmount, setIncrementAmount] = useState('2');
 
@@ -19,7 +20,9 @@ export function Counter() {
 
   return (
     <div>
+        {myWaga}
       <div className={styles.row}>
+        <button onClick={()=>dispatch()}>test </button>
         <button
           className={styles.button}
           aria-label="Decrement value"
